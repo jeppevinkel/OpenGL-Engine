@@ -54,24 +54,69 @@ T Vector3D<T>::angle(Vector3D from, Vector3D to) {
 
 template<typename T>
 T Vector3D<T>::dot(Vector3D a, Vector3D b) {
-    return a.x * b.x + a.y * b.y + a.z * b.z;;
+    return a.x * b.x + a.y * b.y + a.z * b.z;
 }
 
 template<typename T>
-[[maybe_unused]] void Vector3D<T>::set(T x, T y, T z) {
-    this->x = x;
-    this->y = y;
-    this->z = z;
+void Vector3D<T>::set(T newX, T newY, T newZ) {
+    this->x = newX;
+    this->y = newY;
+    this->z = newZ;
 }
 
 template<typename T>
 T Vector3D<T>::distance(Vector3D a, Vector3D b) {
-    Vector3D result(a.x - b.x, a.y - b.y, a.z - b.z);
+    Vector3D<T> result(a.x - b.x, a.y - b.y, a.z - b.z);
     return result.magnitude();
 }
 
 template<typename T>
 Vector3D<T> Vector3D<T>::cross(Vector3D a, Vector3D b) {
-    Vector3D result((a.y * b.z) - (a.z * b.y), -((a.x * b.z) - (a.z * b.x)), (a.x * b.y) - (a.y * b.x));
+    Vector3D<T> result((a.y * b.z) - (a.z * b.y), -((a.x * b.z) - (a.z * b.x)), (a.x * b.y) - (a.y * b.x));
     return result;
+}
+
+template<typename T>
+Vector3D<T> Vector3D<T>::max(Vector3D a, Vector3D b) {
+    return Vector3D<T>(std::max(a.x, b.x), std::max(a.y, b.y), std::max(a.z, b.z));
+}
+
+template<typename T>
+Vector3D<T> Vector3D<T>::min(Vector3D a, Vector3D b) {
+    return Vector3D<T>(std::min(a.x, b.x), std::min(a.y, b.y), std::min(a.z, b.z));
+}
+
+template<typename T>
+Vector3D<T> Vector3D<T>::operator-(const Vector3D<T>& rhs) {
+    return Vector3D(x - rhs.x, y - rhs.y, z - rhs.z);
+}
+
+template<typename T>
+Vector3D<T> Vector3D<T>::operator+(const Vector3D<T>& rhs) {
+    return Vector3D(x + rhs.x, y + rhs.y, z + rhs.z);
+}
+
+template<typename T>
+Vector3D<T> Vector3D<T>::operator*(const T& rhs) {
+    return Vector3D(x * rhs, y * rhs, z * rhs);
+}
+
+template<typename T>
+Vector3D<T> Vector3D<T>::operator/(const T &rhs) {
+    return Vector3D(x / rhs, y / rhs, z / rhs);
+}
+
+template<typename T>
+bool Vector3D<T>::operator==(const Vector3D<T> &rhs) {
+    return this->equals(rhs);
+}
+
+template<typename T>
+bool Vector3D<T>::operator!=(const Vector3D<T> &rhs) {
+    return !this->equals(rhs);
+}
+
+template<typename T>
+Vector3D<T> Vector3D<T>::lerp(Vector3D a, Vector3D b, float t) {
+    return a + (b - a) * t;
 }

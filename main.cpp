@@ -31,5 +31,16 @@ int main(int argc, char** argv) {
     std::cout << "Vector3D.cross(crossA, crossB): " << Vector3D<>::cross(crossA, crossB).toString() << std::endl;
     std::cout << "Vector3D.dot(crossA, crossB): " << Vector3D<>::dot(crossA, crossB) << std::endl;
 
+    std::cout << "Vector3D.min(crossA, crossB): " << Vector3D<>::min(crossA, crossB).toString() << std::endl;
+    std::cout << "Vector3D.max(crossA, crossB): " << Vector3D<>::max(crossA, crossB).toString() << std::endl;
+
+    std::cout << "crossA - crossB: " << (crossA - crossB).toString() << std::endl;
+    std::cout << "crossA + crossB: " << (crossA + crossB).toString() << std::endl;
+
+    std::cout << "Vector3D.lerp(crossA, crossB, 0): " << Vector3D<>::lerp(crossA, crossB, 0).toString() << std::endl;
+    std::cout << "Vector3D.lerp(crossA, crossB, 0.2): " << Vector3D<>::lerp(crossA, crossB, 0.2).toString() << std::endl;
+    std::cout << "Vector3D.lerp(crossA, crossB, 0.6): " << Vector3D<>::lerp(crossA, crossB, 0.6).toString() << std::endl;
+    std::cout << "Vector3D.lerp(crossA, crossB, 1): " << Vector3D<>::lerp(crossA, crossB, 1).toString() << std::endl;
+
     return 0;
 }

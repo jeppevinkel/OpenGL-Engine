@@ -19,7 +19,14 @@ public:
 
     [[nodiscard]] std::string toString(int precision = 0) const;
 
-    [[maybe_unused]] void set(T x, T y, T z);
+    void set(T t, T y, T z);
+
+    Vector3D<T> operator-(const Vector3D<T>& rhs);
+    Vector3D<T> operator+(const Vector3D<T>& rhs);
+    Vector3D<T> operator*(const T& rhs);
+    Vector3D<T> operator/(const T& rhs);
+    bool operator==(const Vector3D<T>& rhs);
+    bool operator!=(const Vector3D<T>& rhs);
 
     [[nodiscard]] bool equals(Vector3D other) const;
 
@@ -27,6 +34,9 @@ public:
     static T dot(Vector3D a, Vector3D b);
     static Vector3D<T> cross(Vector3D a, Vector3D b);
     static T distance(Vector3D a, Vector3D b);
+    static Vector3D<T> max(Vector3D a, Vector3D b);
+    static Vector3D<T> min(Vector3D a, Vector3D b);
+    static Vector3D<T> lerp(Vector3D a, Vector3D b, float t);
 
     Vector3D();
     Vector3D(T x, T y, T z);
