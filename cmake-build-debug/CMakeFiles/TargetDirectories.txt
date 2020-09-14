@@ -1,3 +1,0 @@
-/home/jeppe/CLionProjects/OpenGL-Engine/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/jeppe/CLionProjects/OpenGL-Engine/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/jeppe/CLionProjects/OpenGL-Engine/cmake-build-debug/CMakeFiles/OpenGL_Engine.dir
