@@ -3,7 +3,7 @@ project(OpenGL_Engine)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(OpenGL_Engine main.cpp Vector3D.cpp Vector3D.h)
+add_executable(OpenGL_Engine main.cpp Api/Vector3D.cpp Api/Vector3D.h)
 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
